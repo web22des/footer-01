@@ -1,0 +1,667 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular,500,700&display=swap);
+
+@charset "UTF-8";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #fff;
+  line-height: 1;
+  font-family: "Roboto";
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Roboto";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.test {
+  color: #333333;
+  color: #5A5A5A;
+  color: #4762FF;
+  color: #F4F6FA;
+  color: #D9DBE1;
+}
+
+/* inter bold    60px lh auto 333333
+inter bold    36px lh auto 333333
+inter bold    48px lh auto 333333 заголовки секций
+inter bold    24px lh auto 333333 заголовок карточек
+inter bold    14px lh auto ffffff  текст в синих карточках 
+inter bold    18px lh auto 333333
+inter semi bold    18px lh auto 333333 кнопки
+inter regular 12px lh auto 333333 копирайтинг в подвале
+inter regular 14px lh auto 333333
+inter regular 16px lh auto 333333 текст карточек, 
+inter regular 16px lh auto ffffff текст в подвале 
+inter regular 18px lh auto 333333 подзаголовки секций, и параграф с картой
+inter medium  14px lh auto 333333
+inter medium  16px lh auto 333333
+inter medium  20px lh auto 333333 заголовки в подвале */
+
+/* @mixin shadow-1 {
+    -webkit-box-shadow: 13px 13px 45px -2px rgba(56,29,219,0.26); 
+    box-shadow: 13px 13px 45px -2px rgba(56,29,219,0.26);
+} */
+
+.section-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 34px;
+  color: #222222;
+}
+
+.section-title--position {
+  text-align: center;
+}
+
+.text-one {
+  line-height: 130%;
+  font-weight: 400;
+  padding-top: 32px;
+  padding-bottom: 60px;
+  text-align: left;
+}
+
+.span-color-one {
+  color: #4762FF;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #fff;
+}
+
+.lock body {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+
+[class*=__container] {
+  max-width: 73.125rem;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=__container--full] {
+  max-width: 100rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+
+/*
+Ширина контейнера 1170px
+При использовании общие стили вынести в файл common.scss
+все изображения искать в папке src/img/my-img/icons - иконки
+Шрифт по умолчанию Roboto 400 16px
+*/
+
+/* ================== */
+
+.footer {
+  color: #a6a5a5;
+  background-color: #191919;
+  padding: 30px 10px 30px 10px;
+}
+
+.footer__title {
+  font-family: "Roboto";
+  font-weight: bold;
+  color: #cecbcb;
+  padding-bottom: 60px;
+}
+
+@supports (font-size: clamp( 1.875rem , 1.7386363636rem  +  0.6818181818vw , 2.25rem )) {
+  .footer__title {
+    font-size: clamp( 1.875rem , 1.7386363636rem  +  0.6818181818vw , 2.25rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.875rem , 1.7386363636rem  +  0.6818181818vw , 2.25rem )) {
+  .footer__title {
+    font-size: calc(1.875rem + 0.375 * (100vw - 20rem) / 55);
+  }
+}
+
+.footer__sp {
+  color: #4762FF;
+}
+
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer__inner {
+  max-width: 25%;
+  width: 100%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.footer__subtitle {
+  color: #cecbcb;
+  font-family: "Roboto";
+  font-weight: 500;
+  padding-bottom: 24px;
+}
+
+@supports (font-size: clamp( 1.0625rem , 0.9943181818rem  +  0.3409090909vw , 1.25rem )) {
+  .footer__subtitle {
+    font-size: clamp( 1.0625rem , 0.9943181818rem  +  0.3409090909vw , 1.25rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.0625rem , 0.9943181818rem  +  0.3409090909vw , 1.25rem )) {
+  .footer__subtitle {
+    font-size: calc(1.0625rem + 0.1875 * (100vw - 20rem) / 55);
+  }
+}
+
+@supports (padding-top: clamp( 0.3125rem , 2.4431818182rem  +  -2.8409090909vw , 1.875rem )) {
+  .footer__subtitle {
+    padding-top: clamp( 0.3125rem , 2.4431818182rem  +  -2.8409090909vw , 1.875rem );
+  }
+}
+
+@supports not (padding-top: clamp( 0.3125rem , 2.4431818182rem  +  -2.8409090909vw , 1.875rem )) {
+  .footer__subtitle {
+    padding-top: calc(1.875rem + -1.5625 * (100vw - 20rem) / 55);
+  }
+}
+
+.footer__list {
+  font-family: "Roboto";
+  font-weight: 500;
+}
+
+@supports (font-size: clamp( 0.875rem , 0.3154205607rem  +  1.8691588785vw , 1.25rem )) {
+  .footer__list {
+    font-size: clamp( 0.875rem , 0.3154205607rem  +  1.8691588785vw , 1.25rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.3154205607rem  +  1.8691588785vw , 1.25rem )) {
+  .footer__list {
+    font-size: calc(0.875rem + 0.375 * (100vw - 29.9375rem) / 20.0625);
+  }
+}
+
+.footer__item {
+  padding-bottom: 12px;
+  padding-left: 30px;
+}
+
+.footer__item:last-child {
+  padding-bottom: 16px;
+}
+
+.footer__service,
+.footer__about,
+.footer__contact,
+.footer__home,
+.footer__fb,
+.footer__inst,
+.footer__vk,
+.footer__ok,
+.footer__whatsap,
+.footer__tg,
+.footer__skype,
+.footer__fhone,
+.footer__adress {
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.footer__service:hover,
+.footer__about:hover,
+.footer__contact:hover,
+.footer__home:hover,
+.footer__fb:hover,
+.footer__inst:hover,
+.footer__vk:hover,
+.footer__ok:hover,
+.footer__whatsap:hover,
+.footer__tg:hover,
+.footer__skype:hover,
+.footer__fhone:hover,
+.footer__adress:hover {
+  color: #fff;
+}
+
+.footer__service {
+  position: relative;
+}
+
+.footer__service::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-services-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__about {
+  position: relative;
+}
+
+.footer__about::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-about-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__contact {
+  position: relative;
+}
+
+.footer__contact::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-contact-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__home {
+  position: relative;
+}
+
+.footer__home::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-home-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__fb {
+  position: relative;
+}
+
+.footer__fb::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-fb-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__inst {
+  position: relative;
+}
+
+.footer__inst::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-inst-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__vk {
+  position: relative;
+}
+
+.footer__vk::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-vk-light.svg);
+  background-repeat: no-repeat;
+  top: 0px;
+  left: -30px;
+}
+
+.footer__ok {
+  position: relative;
+}
+
+.footer__ok::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-ok-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__fhone {
+  position: relative;
+}
+
+.footer__fhone::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-phone-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__whatsap {
+  position: relative;
+}
+
+.footer__whatsap::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-whatsap-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__tg {
+  position: relative;
+}
+
+.footer__tg::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-telegram-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__skype {
+  position: relative;
+}
+
+.footer__skype::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-skype-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__adress {
+  position: relative;
+  line-height: 130%;
+}
+
+.footer__adress::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/my-img//icons/icon-geo-light.svg);
+  top: 0px;
+  left: -30px;
+}
+
+.footer__line {
+  display: block;
+  height: 2px;
+  width: 85%;
+  margin: 0 auto;
+  background-color: #4e4e4f;
+  margin-bottom: 12px;
+}
+
+.footer__copy {
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: 400;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+@media (min-width: 50em) {
+  .footer__list {
+    font-size: inherit;
+  }
+}
+
+@media (max-width: 61.99875em) {
+  .footer__nav {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 47.99875em) {
+  .footer__nav {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+  .footer__inner {
+    max-width: 35%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 29.99875em) {
+  .footer__inner--mess {
+    margin-left: 32px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .footer__inner--mobile-sm {
+    margin-left: 32px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .footer__subtitle {
+    margin-left: -32px;
+  }
+
+  .footer__list--mess {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .footer__item {
+    padding-left: 0;
+    max-width: 50%;
+    width: 100%;
+    padding-bottom: 14px;
+  }
+
+  .footer__item--mobile-sm {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 29.9375em) {
+  .footer__list {
+    font-size: inherit;
+  }
+}
